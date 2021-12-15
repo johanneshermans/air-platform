@@ -1,7 +1,10 @@
 import { nanoid } from 'nanoid'
+import uploadVideo from './api/uploadVideo';
+import React, {useState} from 'react';
 
 
 const Add = () => {
+    const [headVideo, setHeadVideo] = useState("")
     const handleSubmit = async (message) => {
         const response = await fetch(
             `https://dev4-personal-blog-backend.herokuapp.com/songs`,
@@ -25,10 +28,12 @@ const Add = () => {
     const handleExp = async (e) => {
         e.preventDefault();
         const generateTargetCode = nanoid();
+        const getHeadVideoLink = await uploadVideo(headVideo)
+        console.log(getHeadVideoLink);
         const data = {
             title: e.target.title.value,
             artist: e.target.artist.value,
-            videoclip_link: e.target.videoclip_link.value,
+            videoclip_link: getHeadVideoLink,
             bpm: e.target.bpm.value,
             target: generateTargetCode,
             model: {
@@ -56,9 +61,15 @@ const Add = () => {
         handleSubmit(data)
     }
 
+
+
     return (
         <div>
             <h2>Add Experience</h2>
+
+
+
+
             <form onSubmit={(e) => handleExp(e)}>
                 <h3>General info</h3>
                 <label>
@@ -71,10 +82,7 @@ const Add = () => {
                     <input type="text" name="artist" required />
                 </label>
                 <br />
-                <label>
-                    Upload Video
-                    <input type="text" name="videoclip_link" required />
-                </label>
+                <input type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
                 <br />
                 <label>
                     Bpm
