@@ -1,5 +1,6 @@
 import Head from "next/head";
-import NavBar from '../components/NavBar';
+import styles from "../styles/Home.module.css";
+
 const Layout = ({ children }) => {
     return (
         <div>
@@ -12,8 +13,7 @@ const Layout = ({ children }) => {
             </Head>
 
             <header>
-                <h1>AiR</h1>
-                <NavBar />
+                <h1 className={styles.none}>AiR</h1>
             </header>
             <main>{children}</main>
         </div>

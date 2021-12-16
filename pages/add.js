@@ -1,6 +1,12 @@
 import { nanoid } from 'nanoid'
 import uploadVideo from './api/uploadVideo';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import styles from '../styles/Add.module.css';
+import vibes from '../public/vibes.png';
+import organic from '../public/organic.png';
+import stage from '../public/stage.png';
+import Image from 'next/image';
+import NavBar from '../components/NavBar';
 
 
 const Add = () => {
@@ -64,54 +70,60 @@ const Add = () => {
 
 
     return (
-        <div>
-            <h2>Add Experience</h2>
+        <div className={styles.flex}>
+            <div className={styles.intro}>
+                <NavBar />
+                <h2 className={styles.h2}>Add Experience</h2>
+            </div>
 
 
 
 
-            <form onSubmit={(e) => handleExp(e)}>
-                <h3>General info</h3>
-                <label>
-                    Title
-                    <input type="text" name="title" required />
+
+            <form onSubmit={(e) => handleExp(e)} className={styles.form}>
+                <h3 className={styles.h3}>General info</h3>
+                <label className={styles.labelText}>
+                    <p>Title</p>
+                    <input type="text" name="title" className={styles.inputText} required />
                 </label>
-                <br />
-                <label>
-                    Artist
-                    <input type="text" name="artist" required />
+                <label className={styles.labelText}>
+                    <p>Artist</p>
+                    <input type="text" name="artist" className={styles.inputText} required />
                 </label>
-                <br />
-                <input type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
-                <br />
-                <label>
-                    Bpm
-                    <input type="text" name="bpm" required />
-                </label>
-                <br />
-                <label>
-                    fact
-                    <input type="text" name="fact" required />
+                <input className={styles.labelText} type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
+                <label className={styles.labelText}>
+                    <p>Bpm</p>
+                    <input type="text" name="bpm" className={styles.inputText} required />
                 </label>
 
 
-                <h3>3D Model</h3>
+                <h3 className={styles.h3}>3D Model</h3>
 
                 <h4>Type model</h4>
-                <label>
-                    stage
-                    <input id="stage" value="stage" type="radio" name="model" />
-                </label>
-                <br />
-                <label>
-                    organic
-                    <input id="organic" value="organic" type="radio" name="model" />
-                </label>
-                <br />
-                <label>
-                    vibes
-                    <input id="vibes" value="vibes" type="radio" name="model" />
-                </label>
+                <div className={styles.flexChoice}>
+                    <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="stage">
+                        <Image src={stage} width={1271} height={793} />
+                        <p>Stage</p>
+                    </label>
+                    
+                    <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="organic">
+                        <Image src={organic} width={1271} height={793} />
+                        <p>Organic</p>
+
+                    </label>
+
+                    <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="vibes">
+                        <div>
+                            <Image src={vibes} width={1271} height={793} />
+                            <p>Vibes</p>
+                        </div>
+
+                    </label>
+                </div>
+
 
 
                 <h4>Floor</h4>
@@ -180,7 +192,7 @@ const Add = () => {
                     <input type="color" id="color3" name="color3" value="#e66465" />
                 </label> */}
 
-                <h3>Screen Left</h3>
+                <h3 className={styles.h3}>Screen Left</h3>
                 <label>
                     video
                     <input id="video" value="video" type="radio" name="screenLeft" />
