@@ -5,6 +5,15 @@ import styles from '../styles/Add.module.css';
 import vibes from '../public/vibes.png';
 import organic from '../public/organic.png';
 import stage from '../public/stage.png';
+import glossy from '../public/glossy.jpg';
+import lava from '../public/lava.jpg';
+import space from '../public/space.jpg';
+import metal from '../public/metal.jpg';
+import slime from '../public/slime.jpg';
+import muddy from '../public/muddy.jpg';
+import hardwood from '../public/hardwood.jpg';
+import spaced from '../public/spaced.jpg';
+import paper from '../public/paper.jpg';
 import Image from 'next/image';
 import NavBar from '../components/NavBar';
 
@@ -99,14 +108,14 @@ const Add = () => {
 
                 <h3 className={styles.h3}>3D Model</h3>
 
-                <h4>Type model</h4>
+                <h4 className={styles.h4}>Type model</h4>
                 <div className={styles.flexChoice}>
                     <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="stage">
                         <Image src={stage} width={1271} height={793} />
                         <p>Stage</p>
                     </label>
-                    
+
                     <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="organic">
                         <Image src={organic} width={1271} height={793} />
@@ -126,55 +135,71 @@ const Add = () => {
 
 
 
-                <h4>Floor</h4>
-                <label>
-                    hardwood
-                    <input id="hardwood" value="hardwood" type="radio" name="floor" />
-                </label>
-                <br />
-                <label>
-                    spaced
-                    <input id="spaced" value="spaced" type="radio" name="floor" />
-                </label>
-                <br />
-                <label>
-                    muddy
-                    <input id="muddy" value="muddy" type="radio" name="floor" />
-                </label>
+                <h4 className={styles.h4}> Floor</h4>
+                <div className={styles.flexChoice}>
+                    <input id="hardwood" value="hardwood" type="radio" name="floor" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="hardwood">
+                        <Image src={hardwood} width={900} height={900} />
+                        <p>Hardwood</p>
+                    </label>
+
+                    <input id="spaced" value="spaced" type="radio" name="floor" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="spaced">
+                        <Image src={spaced} width={900} height={900} />
+                        <p>Rough</p>
+                    </label>
+
+                    <input id="muddy" value="muddy" type="radio" name="floor" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="muddy">
+                        <Image src={muddy} width={900} height={900} />
+                        <p>Muddy</p>
+                    </label>
+                </div>
 
 
-                <h4>Element</h4>
-                <label>
-                    paper
-                    <input id="paper" value="paper" type="radio" name="element" />
-                </label>
-                <br />
-                <label>
-                    metal
-                    <input id="metal" value="metal" type="radio" name="element" />
-                </label>
-                <br />
-                <label>
-                    space
-                    <input id="space" value="sapce" type="radio" name="element" />
-                </label>
+                <h4 className={styles.h4}>Element</h4>
+                <div className={styles.flexChoice}>
+                    <input id="paper" value="paper" type="radio" name="element" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="paper">
+                        <Image src={paper} width={900} height={900} />
+                        <p>Paper</p>
+                    </label>
+
+                    <input id="metal" value="metal" type="radio" name="element" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="metal">
+                        <Image src={metal} width={900} height={900} />
+                        <p>Metal</p>
+                    </label>
+
+                    <input id="space" value="space" type="radio" name="element" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="space">
+                        <Image src={space} width={900} height={900} />
+                        <p>Space</p>
+                    </label>
+                </div>
 
 
-                <h4>Special</h4>
-                <label>
-                    glossy
-                    <input id="glossy" value="glossy" type="radio" name="special" />
-                </label>
-                <br />
-                <label>
-                    lava
-                    <input id="lava" value="lava" type="radio" name="special" />
-                </label>
-                <br />
-                <label>
-                    slime
-                    <input id="slime" value="slime" type="radio" name="special" />
-                </label>
+                <h4 className={styles.h4}>Special</h4>
+                <div className={styles.flexChoice}>
+                    <input id="glossy" value="glossy" type="radio" name="special" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="glossy">
+                        <Image src={glossy} width={900} height={900} />
+                        <p>Glossy</p>
+                    </label>
+
+                    <input id="lava" value="lava" type="radio" name="special" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="lava">
+                        <Image src={lava} width={900} height={900} />
+                        <p>Lava</p>
+                    </label>
+
+                    <input id="slime" value="slime" type="radio" name="special" className={styles.inputRadio} />
+                    <label className={styles.labelRadio} htmlFor="slime">
+                        <Image src={slime} width={900} height={900} />
+                        <p>Slime</p>
+                    </label>
+                </div>
+
 
                 {/*                 <h4>Colors</h4>
                 <label>
@@ -193,16 +218,17 @@ const Add = () => {
                 </label> */}
 
                 <h3 className={styles.h3}>Screen Left</h3>
-                <label>
-                    video
-                    <input id="video" value="video" type="radio" name="screenLeft" />
-                </label>
-                <br />
-                <label>
-                    info
-                    <input id="info" value="info" type="radio" name="screenLeft" />
-                </label>
-                <br />
+                <div className={styles.flexChoice}>
+                    <input id="video" value="video" type="radio" name="screenLeft" className={styles.inputRadioMini} />
+                    <label className={styles.labelRadioMini} htmlFor="video">
+                        <p>Video</p>
+                    </label>
+
+                    <input id="info" value="info" type="radio" name="screenLeft" className={styles.inputRadioMini} />
+                    <label className={styles.labelRadioMini} htmlFor="info">
+                        <p>Info</p>
+                    </label>
+                </div>
                 <label>
                     Upload Video
                     <input type="text" name="screenLeftVideo" />

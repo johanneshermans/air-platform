@@ -16,9 +16,11 @@
     color: white;
     filter: drop-shadow(0 0 2rem black);
 }
-
 .h3 {
     font-size: 2em;
+}
+.h4 {
+    font-size: 1.5em;
 }
 
 .form {
@@ -53,11 +55,33 @@
 
 .inputRadio[type="radio"]:checked+label {
     font-weight: bold;
+    background: rgb(0,97,255);
+    background: linear-gradient(90deg, rgba(0,97,255,1) 0%, rgba(96,239,255,1) 100%);
+    filter: drop-shadow(0 0 .5rem black);
+    color: white;
 }
 
 .labelRadio {
     width: 30%;
-    border: solid 2px grey;
+    border-radius: 0 0 2em 2em;
     text-align: center;
+    background: white;
 }
 
+.inputRadioMini[type="radio"]:checked+label {
+    font-weight: bold;
+    background: rgb(0,97,255);
+    background: linear-gradient(90deg, rgba(0,97,255,1) 0%, rgba(96,239,255,1) 100%);
+    filter: drop-shadow(0 0 .5rem black);
+    color: white;
+}
+
+.labelRadioMini {
+    width: 30%;
+    border-radius: 2em;
+    text-align: center;
+    background: white;
+}
+.inputRadioMini {
+    opacity: 0;
+}
