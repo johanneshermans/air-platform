@@ -19,7 +19,11 @@ import NavBar from '../components/NavBar';
 
 
 const Add = () => {
-    const [headVideo, setHeadVideo] = useState("")
+    const [headVideo, setHeadVideo] = useState("");
+    const [leftVideo, setLeftVideo] = useState("");
+    const [rightVideo, setRightVideo] = useState("");
+    const [leftField, setLeftField] = useState("");
+    const [rightField, setRightField] = useState("");
     const handleSubmit = async (message) => {
         const response = await fetch(
             `https://dev4-personal-blog-backend.herokuapp.com/songs`,
@@ -44,6 +48,8 @@ const Add = () => {
         e.preventDefault();
         const generateTargetCode = nanoid();
         const getHeadVideoLink = await uploadVideo(headVideo)
+        const getLeftVideoLink = await uploadVideo(leftVideo)
+        const getRightVideoLink = await uploadVideo(rightVideo)
         console.log(getHeadVideoLink);
         const data = {
             title: e.target.title.value,
@@ -62,12 +68,12 @@ const Add = () => {
             },
             screen_left: {
                 content_type: e.target.screenLeft.value,
-                video_link: e.target.screenLeftVideo.value,
+                video_link: getLeftVideoLink,
                 info: e.target.screenLeftInfo.value
             },
             screen_right: {
                 content_type: e.target.screenRight.value,
-                video_link: e.target.screenRightVideo.value,
+                video_link: getRightVideoLink,
                 info: e.target.screenRightInfo.value
             }
         }
@@ -75,6 +81,7 @@ const Add = () => {
         console.log(data);
         handleSubmit(data)
     }
+
 
 
 
@@ -99,7 +106,12 @@ const Add = () => {
                     <p>Artist</p>
                     <input type="text" name="artist" className={styles.inputText} required />
                 </label>
-                <input className={styles.labelText} type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
+
+                <label for="file-upload" className={styles.submitButton}>
+                    <p>Upload videoclip</p>
+                </label>
+                <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
+
                 <label className={styles.labelText}>
                     <p>Bpm</p>
                     <input type="text" name="bpm" className={styles.inputText} required />
@@ -120,7 +132,6 @@ const Add = () => {
                     <label className={styles.labelRadio} htmlFor="organic">
                         <Image src={organic} width={1271} height={793} />
                         <p>Organic</p>
-
                     </label>
 
                     <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} />
@@ -217,50 +228,75 @@ const Add = () => {
                     <input type="color" id="color3" name="color3" value="#e66465" />
                 </label> */}
 
-                <h3 className={styles.h3}>Screen Left</h3>
-                <div className={styles.flexChoice}>
-                    <input id="video" value="video" type="radio" name="screenLeft" className={styles.inputRadioMini} />
-                    <label className={styles.labelRadioMini} htmlFor="video">
-                        <p>Video</p>
-                    </label>
+                <div>
+                    <h3 className={styles.h3}>Screen Left</h3>
+                    <div className={styles.flexChoice}>
+                        <input id="videoLeft" value="video" type="radio" name="screenLeft" onChange={(e) => setLeftField("video")} className={styles.inputRadioMini} />
+                        <label className={styles.labelRadioMini} htmlFor="videoLeft">
+                            <p>Video</p>
+                        </label>
 
-                    <input id="info" value="info" type="radio" name="screenLeft" className={styles.inputRadioMini} />
-                    <label className={styles.labelRadioMini} htmlFor="info">
-                        <p>Info</p>
-                    </label>
+                        <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} />
+                        <label className={styles.labelRadioMini} htmlFor="infoLeft">
+                            <p>Info</p>
+                        </label>
+                    </div>
+
+                    {leftField === "video" &&
+                        <>
+                        <label for="file-upload" className={styles.submitButton}>
+                            <p>Upload videoclip</p>
+                        </label>
+                        <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setLeftVideo(e.target.files[0])}></input>
+                        </>
+
+                    }
+
+                    {leftField === "info" &&
+
+                        <label className={styles.labelText}>
+                            <p>Tell a fact about the song</p>
+                            <input type="text" name="screenLeftInfo" className={styles.inputText} />
+                        </label>
+
+                    }
                 </div>
-                <label>
-                    Upload Video
-                    <input type="text" name="screenLeftVideo" />
-                </label>
-                <br />
-                <label>
-                    info
-                    <input type="text" name="screenLeftInfo" />
-                </label>
 
-                <h3>Screen Right</h3>
-                <label>
-                    video
-                    <input id="video" value="video" type="radio" name="screenRight" />
-                </label>
-                <br />
-                <label>
-                    info
-                    <input id="info" value="info" type="radio" name="screenRight" />
-                </label>
-                <br />
-                <label>
-                    Upload Video
-                    <input type="text" name="screenRightVideo" />
-                </label>
-                <br />
-                <label>
-                    info
-                    <input type="text" name="screenRightInfo" />
-                </label>
-                <br />
-                <input type="submit" value="Send" />
+                <div>
+                    <h3 className={styles.h3}>Screen Right</h3>
+                    <div className={styles.flexChoice}>
+                        <input id="videoRight" value="video" type="radio" name="screenRight" onChange={(e) => setRightField("video")} className={styles.inputRadioMini} />
+                        <label className={styles.labelRadioMini} htmlFor="videoRight">
+                            <p>Video</p>
+                        </label>
+
+                        <input id="infoRight" value="info" type="radio" name="screenRight" onChange={(e) => setRightField("info")} className={styles.inputRadioMini} />
+                        <label className={styles.labelRadioMini} htmlFor="infoRight">
+                            <p>Info</p>
+                        </label>
+                    </div>
+
+                    {rightField === "video" &&
+                        <>
+                            <label for="file-upload" className={styles.submitButton}>
+                                <p>Upload videoclip</p>
+                            </label>
+                            <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setRightVideo(e.target.files[0])}></input>
+                        </>
+
+                    }
+
+                    {rightField === "info" &&
+
+                        <label className={styles.labelText}>
+                            <p>Tell a fact about the song</p>
+                            <input type="text" name="screenRightInfo" className={styles.inputText} />
+                        </label>
+
+                    }
+                </div>
+
+                <input type="submit" value="Send" className={styles.submitButton} />
             </form>
         </div>
     )
