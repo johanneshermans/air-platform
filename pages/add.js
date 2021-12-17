@@ -125,20 +125,20 @@ const Add = () => {
                     <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="stage">
                         <Image src={stage} width={1271} height={793} />
-                        <p>Stage</p>
+                        <p className={styles.p}>Stage</p>
                     </label>
 
                     <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="organic">
                         <Image src={organic} width={1271} height={793} />
-                        <p>Organic</p>
+                        <p className={styles.p}>Organic</p>
                     </label>
 
                     <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="vibes">
                         <div>
                             <Image src={vibes} width={1271} height={793} />
-                            <p>Vibes</p>
+                            <p className={styles.p}>Vibes</p>
                         </div>
 
                     </label>
@@ -151,19 +151,19 @@ const Add = () => {
                     <input id="hardwood" value="hardwood" type="radio" name="floor" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="hardwood">
                         <Image src={hardwood} width={900} height={900} />
-                        <p>Hardwood</p>
+                        <p className={styles.p}>Hardwood</p>
                     </label>
 
                     <input id="spaced" value="spaced" type="radio" name="floor" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="spaced">
                         <Image src={spaced} width={900} height={900} />
-                        <p>Rough</p>
+                        <p className={styles.p}>Rough</p>
                     </label>
 
                     <input id="muddy" value="muddy" type="radio" name="floor" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="muddy">
                         <Image src={muddy} width={900} height={900} />
-                        <p>Muddy</p>
+                        <p className={styles.p}>Muddy</p>
                     </label>
                 </div>
 
@@ -173,19 +173,19 @@ const Add = () => {
                     <input id="paper" value="paper" type="radio" name="element" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="paper">
                         <Image src={paper} width={900} height={900} />
-                        <p>Paper</p>
+                        <p className={styles.p}>Paper</p>
                     </label>
 
                     <input id="metal" value="metal" type="radio" name="element" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="metal">
                         <Image src={metal} width={900} height={900} />
-                        <p>Metal</p>
+                        <p className={styles.p}>Metal</p>
                     </label>
 
                     <input id="space" value="space" type="radio" name="element" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="space">
                         <Image src={space} width={900} height={900} />
-                        <p>Space</p>
+                        <p className={styles.p}>Space</p>
                     </label>
                 </div>
 
@@ -195,19 +195,19 @@ const Add = () => {
                     <input id="glossy" value="glossy" type="radio" name="special" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="glossy">
                         <Image src={glossy} width={900} height={900} />
-                        <p>Glossy</p>
+                        <p className={styles.p}>Glossy</p>
                     </label>
 
                     <input id="lava" value="lava" type="radio" name="special" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="lava">
                         <Image src={lava} width={900} height={900} />
-                        <p>Lava</p>
+                        <p className={styles.p}>Lava</p>
                     </label>
 
                     <input id="slime" value="slime" type="radio" name="special" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="slime">
                         <Image src={slime} width={900} height={900} />
-                        <p>Slime</p>
+                        <p className={styles.p}>Slime</p>
                     </label>
                 </div>
 
@@ -233,21 +233,21 @@ const Add = () => {
                     <div className={styles.flexChoice}>
                         <input id="videoLeft" value="video" type="radio" name="screenLeft" onChange={(e) => setLeftField("video")} className={styles.inputRadioMini} />
                         <label className={styles.labelRadioMini} htmlFor="videoLeft">
-                            <p>Video</p>
+                            <p className={styles.p}>Video</p>
                         </label>
 
                         <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} />
                         <label className={styles.labelRadioMini} htmlFor="infoLeft">
-                            <p>Info</p>
+                            <p className={styles.p}>Info</p>
                         </label>
                     </div>
 
                     {leftField === "video" &&
                         <>
-                        <label for="file-upload" className={styles.submitButton}>
-                            <p>Upload videoclip</p>
-                        </label>
-                        <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setLeftVideo(e.target.files[0])}></input>
+                            <label for="file-upload" className={styles.submitButton}>
+                                <p>Upload left video</p>
+                            </label>
+                            <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setLeftVideo(e.target.files[0])}></input>
                         </>
 
                     }
@@ -255,7 +255,7 @@ const Add = () => {
                     {leftField === "info" &&
 
                         <label className={styles.labelText}>
-                            <p>Tell a fact about the song</p>
+                            <p> className={styles.p}Tell a fact about the song</p>
                             <input type="text" name="screenLeftInfo" className={styles.inputText} />
                         </label>
 
@@ -267,19 +267,19 @@ const Add = () => {
                     <div className={styles.flexChoice}>
                         <input id="videoRight" value="video" type="radio" name="screenRight" onChange={(e) => setRightField("video")} className={styles.inputRadioMini} />
                         <label className={styles.labelRadioMini} htmlFor="videoRight">
-                            <p>Video</p>
+                            <p className={styles.p}>Video</p>
                         </label>
 
                         <input id="infoRight" value="info" type="radio" name="screenRight" onChange={(e) => setRightField("info")} className={styles.inputRadioMini} />
                         <label className={styles.labelRadioMini} htmlFor="infoRight">
-                            <p>Info</p>
+                            <p className={styles.p}>Info</p>
                         </label>
                     </div>
 
                     {rightField === "video" &&
                         <>
                             <label for="file-upload" className={styles.submitButton}>
-                                <p>Upload videoclip</p>
+                            <p className={styles.p}>Upload right video</p>
                             </label>
                             <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setRightVideo(e.target.files[0])}></input>
                         </>

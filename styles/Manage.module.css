@@ -1,0 +1,29 @@
+.section {
+    width: 96rem;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.h2 {
+    text-align: center;
+    font-size: 8em;
+}
+
+.container {
+    width: 20%;
+    padding-top: 4rem;
+    background: linear-gradient(90deg, rgba(0,97,255,1) 0%, rgba(96,239,255,1) 100%);
+    border-radius: 2em;
+    filter: drop-shadow(0 16px 40px rgba(96,239,255,1));
+}
+
+.textContainer {
+    padding: 10%;
+}
+
