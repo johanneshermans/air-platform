@@ -39,6 +39,12 @@
     overflow-y:auto;
 }
 
+.formChange {
+    width: 50%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
 .labelText {
     display: block;
     margin-top: 2em;
@@ -85,14 +91,17 @@
     background: linear-gradient(90deg, rgba(0,97,255,1) 0%, rgba(96,239,255,1) 100%);
     filter: drop-shadow(0 0 .5rem black);
     color: white;
+    border: none;
 
 }
 
 .labelRadioMini {
     width: 30%;
     border-radius: 2em;
+    border: black solid .2em;
     text-align: center;
     background: white;
+
 }
 
 .inputRadioMini {

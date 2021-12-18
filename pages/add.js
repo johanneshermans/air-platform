@@ -47,9 +47,9 @@ const Add = () => {
     const handleExp = async (e) => {
         e.preventDefault();
         const generateTargetCode = nanoid();
-        const getHeadVideoLink = await uploadVideo(headVideo)
-        const getLeftVideoLink = await uploadVideo(leftVideo)
-        const getRightVideoLink = await uploadVideo(rightVideo)
+        const getHeadVideoLink = await uploadVideo(headVideo, null)
+        const getLeftVideoLink = await uploadVideo(leftVideo, null)
+        const getRightVideoLink = await uploadVideo(rightVideo, null)
         console.log(getHeadVideoLink);
         const data = {
             title: e.target.title.value,
@@ -255,7 +255,7 @@ const Add = () => {
                     {leftField === "info" &&
 
                         <label className={styles.labelText}>
-                            <p> className={styles.p}Tell a fact about the song</p>
+                            <p className={styles.p}> Tell a fact about the song</p>
                             <input type="text" name="screenLeftInfo" className={styles.inputText} />
                         </label>
 
@@ -279,7 +279,7 @@ const Add = () => {
                     {rightField === "video" &&
                         <>
                             <label for="file-upload" className={styles.submitButton}>
-                            <p className={styles.p}>Upload right video</p>
+                                <p className={styles.p}>Upload right video</p>
                             </label>
                             <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setRightVideo(e.target.files[0])}></input>
                         </>
@@ -296,7 +296,7 @@ const Add = () => {
                     }
                 </div>
 
-                <input type="submit" value="Send" className={styles.submitButton} />
+                <input type="submit" value="Send Experience" className={styles.submitButton} />
             </form>
         </div>
     )

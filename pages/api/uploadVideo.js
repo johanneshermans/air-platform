@@ -1,4 +1,4 @@
-const uploadVideo = async (video) => {
+const uploadVideo = async (video, url) => {
     if (video !== 0) {
         const data = new FormData()
         data.append("file", video)
@@ -10,6 +10,8 @@ const uploadVideo = async (video) => {
         })
         let videoInfo = await response.json()
         return videoInfo.url;
+    } else if (url !== null) {
+        return url
     } else {
         return null;
     }

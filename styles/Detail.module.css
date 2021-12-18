@@ -1,0 +1,35 @@
+.article {
+    width: 96rem;
+    margin: 0 auto;
+}
+
+.head {
+    text-align: center;
+    font-size: 3.5em;
+}
+
+.h3 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.leftScreen, .videoClip, .rightScreen {
+    width: 30%;
+}
+
+.video {
+    width: 100%;
+}
+
+.expText {
+    text-align: justify;
+    font-size: 1.3em;
+}
+

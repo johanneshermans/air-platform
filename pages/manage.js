@@ -31,12 +31,15 @@ export default function Manage({ data }) {
                                 <div className={styles.textContainer}>
                                     <h3>{song.title}</h3>
                                     <p>{song.artist}</p>
+                                    <Link href={`/change/${song.target}`}> Edit</Link>
                                 </div>
                             </div>
                         </Link>
                     ))}
                 </div>
             </section>
+
+            
         </>
 
     )
