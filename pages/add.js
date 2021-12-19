@@ -107,7 +107,7 @@ const Add = () => {
                     <input type="text" name="artist" className={styles.inputText} required />
                 </label>
 
-                <label for="file-upload" className={styles.submitButton}>
+                <label htmlFor="file-upload" className={styles.submitButton}>
                     <p>Upload videoclip</p>
                 </label>
                 <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
@@ -244,7 +244,7 @@ const Add = () => {
 
                     {leftField === "video" &&
                         <>
-                            <label for="file-upload" className={styles.submitButton}>
+                            <label htmlFor="file-upload" className={styles.submitButton}>
                                 <p>Upload left video</p>
                             </label>
                             <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setLeftVideo(e.target.files[0])}></input>
@@ -278,7 +278,7 @@ const Add = () => {
 
                     {rightField === "video" &&
                         <>
-                            <label for="file-upload" className={styles.submitButton}>
+                            <label htmlFor="file-upload" className={styles.submitButton}>
                                 <p className={styles.p}>Upload right video</p>
                             </label>
                             <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setRightVideo(e.target.files[0])}></input>
