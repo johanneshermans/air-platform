@@ -100,7 +100,7 @@ export default function Change({ data, notFound }) {
                     <input type="text" name="artist" className={styles.inputText} defaultValue={data.artist} required />
                 </label>
 
-                <label htmlfor="file-upload" className={styles.submitButton}>
+                <label htmlFor="file-upload" className={styles.submitButton}>
                     <p>Change videoclip</p>
                 </label>
                 <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
