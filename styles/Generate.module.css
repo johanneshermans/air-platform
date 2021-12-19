@@ -1,0 +1,42 @@
+.container {
+    width: 50%;
+    padding: 5%;
+    margin: 0 auto;
+
+}
+
+.border {
+    border: solid 2em #000000;
+    padding: 5%;
+}
+
+.flex {
+    display: flex;
+}
+
+.code {
+    width: 45%;
+    text-align: left;
+    font-size: 8em;
+    line-height: 90%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+
+.codeBox {
+    width: 70%;
+    margin-bottom: 2em;
+    padding-top: 3%;
+
+}
+
+.artist, .title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 6em;
+    line-height: 100%;
+}
+
+.title {
+    font-size: 4em;
+}

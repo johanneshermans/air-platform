@@ -15,7 +15,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 40%;
+  width: 60%;
+}
+
+.miniLogo {
+  display: block;
+  width: 10%;
 }
 
 
