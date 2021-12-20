@@ -14,14 +14,22 @@
     font-size: 2em;
 }
 
-.flex {
+.flex, .models {
     display: flex;
     width: 100%;
+    margin: 5em auto;
     justify-content: space-between;
+    
 }
 
 .leftScreen, .videoClip, .rightScreen {
     width: 30%;
+}
+
+.models {
+    background: linear-gradient(90deg, rgba(0,97,255,1) 0%, rgba(96,239,255,1) 100%);
+    padding: 4em;
+    border-radius: 2em;
 }
 
 .video {
@@ -31,5 +39,9 @@
 .expText {
     text-align: justify;
     font-size: 1.3em;
+}
+
+.box {
+    width: 20%;
 }
 

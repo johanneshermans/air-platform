@@ -1,5 +1,18 @@
 import NavBar from '../../components/NavBar';
 import styles from '../../styles/Detail.module.css';
+import Image from 'next/image';
+import vibes from '../../public/vibes.png';
+import organic from '../../public/organic.png';
+import stage from '../../public/stage.png';
+import glossy from '../../public/glossy.jpg';
+import lava from '../../public/lava.jpg';
+import space from '../../public/space.jpg';
+import metal from '../../public/metal.jpg';
+import slime from '../../public/slime.jpg';
+import muddy from '../../public/muddy.jpg';
+import hardwood from '../../public/hardwood.jpg';
+import spaced from '../../public/spaced.jpg';
+import paper from '../../public/paper.jpg';     
 
 
 export default function Detail({ data, notFound }) {
@@ -45,6 +58,25 @@ export default function Detail({ data, notFound }) {
                             </div>
                         </div>
                     </section>
+
+                    <section className={styles.models}>
+                        <div className={styles.box}>
+                            <h3 className={styles.h3}>Model</h3>
+                            <Image src={GiveImage(data.model.sort)} width={1537} height={984} alt="prop for model" />
+                        </div>
+                        <div className={styles.box}>
+                            <h3 className={styles.h3}>Floor</h3>
+                            <Image src={GiveImage(data.model.tex1)} width={900} height={900} alt="prop for model" />
+                        </div>
+                        <div className={styles.box}>
+                            <h3 className={styles.h3}>Elemenet</h3>
+                            <Image src={GiveImage(data.model.tex2)} width={900} height={900} alt="prop for model" />
+                        </div>
+                        <div className={styles.box}>
+                            <h3 className={styles.h3}>Special</h3>
+                            <Image src={GiveImage(data.model.tex3)} width={900} height={900} alt="prop for model" />
+                        </div>
+                    </section>
                 </article>
             </>
         )
@@ -52,7 +84,48 @@ export default function Detail({ data, notFound }) {
     if (!data) {
         return (<p>lost data</p>)
     }
+}
 
+const GiveImage = (image) => {
+    switch (image) {
+        case "paper":
+            return paper
+            break;
+        case "spaced":
+            return spaced
+            break;
+        case "hardwood":
+            return hardwood
+            break;
+        case "muddy":
+            return muddy
+            break;
+        case "slime":
+            return slime
+            break;
+        case "metal":
+            return metal
+            break;
+        case "space":
+            return space
+            break;
+        case "lava":
+            return lava
+            break;
+        case "glossy":
+            return glossy
+            break;
+        case "stage":
+            return stage
+            break;
+        case "organic":
+            return organic
+            break;
+        case "vibes":
+            return vibes
+            break;
+        default:
+    }
 }
 
 
