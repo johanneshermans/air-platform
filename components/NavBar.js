@@ -15,14 +15,14 @@ const NavBar = () => {
                 <a>Add Experience</a>
             </Link>
             <div className={styles.miniLogo}>
-                <Image src={miniLogo} width={437} height={226}></Image>
+                <Image alt='mini logo' src={miniLogo} width={437} height={226}></Image>
             </div>
             <Link href="/manage" >
                 <a>Manage</a>
             </Link>
 
-            <Link href="/discover" >
-                <a>Discover</a>
+            <Link href="/features" >
+                <a>Featues</a>
             </Link>
 
         </nav>

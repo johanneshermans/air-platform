@@ -4,6 +4,7 @@ import avicii from '../public/avicii.png'
 import killers from '../public/killers.png'
 import Image from 'next/image';
 import NavBar from '../components/NavBar';
+import Link from 'next/link';
 
 const HeadPage = () => {
     return (
@@ -24,7 +25,10 @@ const HeadPage = () => {
                 <section className={styles.content}>
                     <div className={styles.container}>
                         <h2 className={styles.title}>Remember Avicii, come together to enjoy</h2>
-                        <a className={styles.buttonBlack}>Discover</a>
+                        <Link href={`/detail/h8fHSaofym-JvkxbFyYvG`}>
+                            <a className={styles.buttonBlack}>Discover</a>
+                        </Link>
+
                     </div>
                     <Image alt='Avicii' className={styles.container_img} src={avicii} width={900} height={629} />
                 </section>
@@ -33,15 +37,20 @@ const HeadPage = () => {
                     <Image alt='The killers' className={styles.container_img} src={killers} width={900} height={629} />
                     <div className={styles.container}>
                         <h2 className={styles.title}>Feel the emotions of Mr. Brightside</h2>
-                        <a className={styles.buttonBlack}>Discover</a>
+                        <Link href={`/detail/6QK3`}>
+                            <a className={styles.buttonBlack}>Discover</a>
+                        </Link>
+
                     </div>
                 </section>
             </article>
 
             <div className={styles.blackBox}>
                 <div className={styles.magicBox}>
-                    <q className={styles.blackBoxQuote}> How we did it? Not with magic, but with a balanced system</q>
-                    <a className={styles.buttonWhite}>Discover our features</a>
+                    <q className={styles.blackBoxQuote}>How we did it? Not with magic, but with a balanced system</q>
+                    <Link href={`/features`}>
+                        <a className={styles.buttonWhite}>Discover our features</a>
+                    </Link>
                 </div>
 
             </div>
