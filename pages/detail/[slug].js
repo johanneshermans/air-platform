@@ -90,6 +90,6 @@ export const getStaticPaths = async () => {
                 slug: song.target,
             },
         })),
-        fallback: true,
+        fallback: false,
     };
 };
