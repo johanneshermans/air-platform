@@ -86,162 +86,163 @@ export default function Change({ data, notFound }) {
         handleSubmit(data)
     }
 
-    return (
-        <>
-            <NavBar />
-            <form onSubmit={(e) => handleExp(e)} className={styles.formChange}>
-                <h3 className={styles.h3}>General info</h3>
-                <label className={styles.labelText}>
-                    <p>Title</p>
-                    <input type="text" name="title" className={styles.inputText} defaultValue={data.title} required />
-                </label>
-                <label className={styles.labelText}>
-                    <p>Artist</p>
-                    <input type="text" name="artist" className={styles.inputText} defaultValue={data.artist} required />
-                </label>
-
-                <label htmlFor="file-upload" className={styles.submitButton}>
-                    <p>Change videoclip</p>
-                </label>
-                <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
-
-                <label className={styles.labelText}>
-                    <p>Bpm</p>
-                    <input type="text" name="bpm" className={styles.inputText} defaultValue={data.bpm} required />
-                </label>
-
-
-                <h3 className={styles.h3}>3D Model</h3>
-
-                <h4 className={styles.h4}>Type model</h4>
-                <div className={styles.flexChoice}>
-                    {data.model.sort === "stage" ?
-                        <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} defaultChecked />
-                        : <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="stage">
-                        <Image src={stage} width={1271} height={793} />
-                        <p className={styles.p}>Stage</p>
+    if (data) {
+        return (
+            <>
+                <NavBar />
+                <form onSubmit={(e) => handleExp(e)} className={styles.formChange}>
+                    <h3 className={styles.h3}>General info</h3>
+                    <label className={styles.labelText}>
+                        <p>Title</p>
+                        <input type="text" name="title" className={styles.inputText} defaultValue={data.title} required />
+                    </label>
+                    <label className={styles.labelText}>
+                        <p>Artist</p>
+                        <input type="text" name="artist" className={styles.inputText} defaultValue={data.artist} required />
                     </label>
 
-                    {data.model.sort === "organic" ?
-                        <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} defaultChecked />
-                        : <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="organic">
-                        <Image src={organic} width={1271} height={793} />
-                        <p className={styles.p}>Organic</p>
+                    <label htmlFor="file-upload" className={styles.submitButton}>
+                        <p>Change videoclip</p>
+                    </label>
+                    <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setHeadVideo(e.target.files[0])}></input>
+
+                    <label className={styles.labelText}>
+                        <p>Bpm</p>
+                        <input type="text" name="bpm" className={styles.inputText} defaultValue={data.bpm} required />
                     </label>
 
-                    {data.model.sort === "vibes" ?
-                        <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} defaultChecked />
-                        : <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="vibes">
-                        <div>
-                            <Image src={vibes} width={1271} height={793} />
-                            <p className={styles.p}>Vibes</p>
-                        </div>
-                    </label>
-                </div>
+
+                    <h3 className={styles.h3}>3D Model</h3>
+
+                    <h4 className={styles.h4}>Type model</h4>
+                    <div className={styles.flexChoice}>
+                        {data.model.sort === "stage" ?
+                            <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} defaultChecked />
+                            : <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="stage">
+                            <Image src={stage} width={1271} height={793} />
+                            <p className={styles.p}>Stage</p>
+                        </label>
+
+                        {data.model.sort === "organic" ?
+                            <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} defaultChecked />
+                            : <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="organic">
+                            <Image src={organic} width={1271} height={793} />
+                            <p className={styles.p}>Organic</p>
+                        </label>
+
+                        {data.model.sort === "vibes" ?
+                            <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} defaultChecked />
+                            : <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="vibes">
+                            <div>
+                                <Image src={vibes} width={1271} height={793} />
+                                <p className={styles.p}>Vibes</p>
+                            </div>
+                        </label>
+                    </div>
 
 
 
-                <h4 className={styles.h4}> Floor</h4>
-                <div className={styles.flexChoice}>
-                    {data.model.tex1 === "hardwood" ?
-                        <input id="hardwood" value="hardwood" type="radio" name="floor" className={styles.inputRadio} defaultChecked />
-                        : <input id="hardwood" value="hardwood" type="radio" name="floor" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="hardwood">
-                        <Image src={hardwood} width={900} height={900} />
-                        <p className={styles.p}>Hardwood</p>
-                    </label>
+                    <h4 className={styles.h4}> Floor</h4>
+                    <div className={styles.flexChoice}>
+                        {data.model.tex1 === "hardwood" ?
+                            <input id="hardwood" value="hardwood" type="radio" name="floor" className={styles.inputRadio} defaultChecked />
+                            : <input id="hardwood" value="hardwood" type="radio" name="floor" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="hardwood">
+                            <Image src={hardwood} width={900} height={900} />
+                            <p className={styles.p}>Hardwood</p>
+                        </label>
 
-                    {data.model.tex1 === "spaced" ?
-                        <input id="spaced" value="spaced" type="radio" name="floor" className={styles.inputRadio} defaultChecked />
-                        : <input id="spaced" value="spaced" type="radio" name="floor" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="spaced">
-                        <Image src={spaced} width={900} height={900} />
-                        <p className={styles.p}>Rough</p>
-                    </label>
+                        {data.model.tex1 === "spaced" ?
+                            <input id="spaced" value="spaced" type="radio" name="floor" className={styles.inputRadio} defaultChecked />
+                            : <input id="spaced" value="spaced" type="radio" name="floor" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="spaced">
+                            <Image src={spaced} width={900} height={900} />
+                            <p className={styles.p}>Rough</p>
+                        </label>
 
-                    {data.model.tex1 === "muddy" ?
-                        <input id="muddy" value="muddy" type="radio" name="floor" className={styles.inputRadio} defaultChecked />
-                        : <input id="muddy" value="muddy" type="radio" name="floor" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="muddy">
-                        <Image src={muddy} width={900} height={900} />
-                        <p className={styles.p}>Muddy</p>
-                    </label>
-                </div>
-
-
-                <h4 className={styles.h4}>Element</h4>
-                <div className={styles.flexChoice}>
-                    {data.model.tex2 === "paper" ?
-                        <input id="paper" value="paper" type="radio" name="element" className={styles.inputRadio} defaultChecked />
-                        : <input id="paper" value="paper" type="radio" name="element" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="paper">
-                        <Image src={paper} width={900} height={900} />
-                        <p className={styles.p}>Paper</p>
-                    </label>
-
-                    {data.model.tex2 === "metal" ?
-                        <input id="metal" value="metal" type="radio" name="element" className={styles.inputRadio} defaultChecked />
-                        : <input id="metal" value="metal" type="radio" name="element" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="metal">
-                        <Image src={metal} width={900} height={900} />
-                        <p className={styles.p}>Metal</p>
-                    </label>
-
-                    {data.model.tex2 === "space" ?
-                        <input id="space" value="space" type="radio" name="element" className={styles.inputRadio} defaultChecked />
-                        : <input id="space" value="space" type="radio" name="element" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="space">
-                        <Image src={space} width={900} height={900} />
-                        <p className={styles.p}>Space</p>
-                    </label>
-
-                </div>
+                        {data.model.tex1 === "muddy" ?
+                            <input id="muddy" value="muddy" type="radio" name="floor" className={styles.inputRadio} defaultChecked />
+                            : <input id="muddy" value="muddy" type="radio" name="floor" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="muddy">
+                            <Image src={muddy} width={900} height={900} />
+                            <p className={styles.p}>Muddy</p>
+                        </label>
+                    </div>
 
 
-                <h4 className={styles.h4}>Special</h4>
-                <div className={styles.flexChoice}>
-                    {data.model.tex3 === "glossy" ?
-                        <input id="glossy" value="glossy" type="radio" name="special" className={styles.inputRadio} defaultChecked />
-                        : <input id="glossy" value="glossy" type="radio" name="special" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="glossy">
-                        <Image src={glossy} width={900} height={900} />
-                        <p className={styles.p}>Glossy</p>
-                    </label>
+                    <h4 className={styles.h4}>Element</h4>
+                    <div className={styles.flexChoice}>
+                        {data.model.tex2 === "paper" ?
+                            <input id="paper" value="paper" type="radio" name="element" className={styles.inputRadio} defaultChecked />
+                            : <input id="paper" value="paper" type="radio" name="element" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="paper">
+                            <Image src={paper} width={900} height={900} />
+                            <p className={styles.p}>Paper</p>
+                        </label>
 
-                    {data.model.tex3 === "lava" ?
-                        <input id="lava" value="lava" type="radio" name="special" className={styles.inputRadio} defaultChecked />
-                        : <input id="lava" value="lava" type="radio" name="special" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="lava">
-                        <Image src={lava} width={900} height={900} />
-                        <p className={styles.p}>Lava</p>
-                    </label>
+                        {data.model.tex2 === "metal" ?
+                            <input id="metal" value="metal" type="radio" name="element" className={styles.inputRadio} defaultChecked />
+                            : <input id="metal" value="metal" type="radio" name="element" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="metal">
+                            <Image src={metal} width={900} height={900} />
+                            <p className={styles.p}>Metal</p>
+                        </label>
 
-                    {data.model.tex3 === "slime" ?
-                        <input id="slime" value="slime" type="radio" name="special" className={styles.inputRadio} defaultChecked />
-                        : <input id="slime" value="slime" type="radio" name="special" className={styles.inputRadio} />
-                    }
-                    <label className={styles.labelRadio} htmlFor="slime">
-                        <Image src={slime} width={900} height={900} />
-                        <p className={styles.p}>Slime</p>
-                    </label>
-                </div>
+                        {data.model.tex2 === "space" ?
+                            <input id="space" value="space" type="radio" name="element" className={styles.inputRadio} defaultChecked />
+                            : <input id="space" value="space" type="radio" name="element" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="space">
+                            <Image src={space} width={900} height={900} />
+                            <p className={styles.p}>Space</p>
+                        </label>
+
+                    </div>
 
 
-                {/*                 <h4>Colors</h4>
+                    <h4 className={styles.h4}>Special</h4>
+                    <div className={styles.flexChoice}>
+                        {data.model.tex3 === "glossy" ?
+                            <input id="glossy" value="glossy" type="radio" name="special" className={styles.inputRadio} defaultChecked />
+                            : <input id="glossy" value="glossy" type="radio" name="special" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="glossy">
+                            <Image src={glossy} width={900} height={900} />
+                            <p className={styles.p}>Glossy</p>
+                        </label>
+
+                        {data.model.tex3 === "lava" ?
+                            <input id="lava" value="lava" type="radio" name="special" className={styles.inputRadio} defaultChecked />
+                            : <input id="lava" value="lava" type="radio" name="special" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="lava">
+                            <Image src={lava} width={900} height={900} />
+                            <p className={styles.p}>Lava</p>
+                        </label>
+
+                        {data.model.tex3 === "slime" ?
+                            <input id="slime" value="slime" type="radio" name="special" className={styles.inputRadio} defaultChecked />
+                            : <input id="slime" value="slime" type="radio" name="special" className={styles.inputRadio} />
+                        }
+                        <label className={styles.labelRadio} htmlFor="slime">
+                            <Image src={slime} width={900} height={900} />
+                            <p className={styles.p}>Slime</p>
+                        </label>
+                    </div>
+
+
+                    {/*                 <h4>Colors</h4>
                 <label>
                     Color 1
                     <input type="color" id="baba" name="color1" value="" />
@@ -257,91 +258,95 @@ export default function Change({ data, notFound }) {
                     <input type="color" id="color3" name="color3" value="#e66465" />
                 </label> */}
 
-                <div>
-                    <h3 className={styles.h3}>Screen Left</h3>
-                    <div className={styles.flexChoice}>
-                        {data.screen_left.content_type === "video" ?
-                            <input id="videoLeft" value="video" type="radio" name="screenLeft" onChange={(e) => setLeftField("video")} className={styles.inputRadioMini} defaultChecked />
-                            : <input id="videoLeft" value="video" type="radio" name="screenLeft" onChange={(e) => setLeftField("video")} className={styles.inputRadioMini} />
+                    <div>
+                        <h3 className={styles.h3}>Screen Left</h3>
+                        <div className={styles.flexChoice}>
+                            {data.screen_left.content_type === "video" ?
+                                <input id="videoLeft" value="video" type="radio" name="screenLeft" onChange={(e) => setLeftField("video")} className={styles.inputRadioMini} defaultChecked />
+                                : <input id="videoLeft" value="video" type="radio" name="screenLeft" onChange={(e) => setLeftField("video")} className={styles.inputRadioMini} />
+
+                            }
+                            <label className={styles.labelRadioMini} htmlFor="videoLeft">
+                                <p className={styles.p}>Video</p>
+                            </label>
+
+                            {data.screen_left.content_type === "info" ?
+                                <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} defaultChecked />
+                                : <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} />
+                            }
+                            <label className={styles.labelRadioMini} htmlFor="infoLeft">
+                                <p className={styles.p}>Info</p>
+                            </label>
+                        </div>
+
+                        {leftField === "video" &&
+                            <>
+                                <label htmlFor="file-upload" className={styles.submitButton}>
+                                    <p>Upload left video</p>
+                                </label>
+                                <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setLeftVideo(e.target.files[0])}></input>
+                            </>
 
                         }
-                        <label className={styles.labelRadioMini} htmlFor="videoLeft">
-                            <p className={styles.p}>Video</p>
-                        </label>
 
-                        {data.screen_left.content_type === "info" ?
-                            <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} defaultChecked />
-                            : <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} />
+                        {leftField === "info" &&
+                            <label className={styles.labelText}>
+                                <p className={styles.p}> Tell a fact about the song</p>
+                                <input type="text" name="screenLeftInfo" className={styles.inputText} defaultValue={data.screen_left.info} />
+                            </label>
+
                         }
-                        <label className={styles.labelRadioMini} htmlFor="infoLeft">
-                            <p className={styles.p}>Info</p>
-                        </label>
                     </div>
 
-                    {leftField === "video" &&
-                        <>
-                            <label htmlFor="file-upload" className={styles.submitButton}>
-                                <p>Upload left video</p>
+                    <div>
+                        <h3 className={styles.h3}>Screen Right</h3>
+                        <div className={styles.flexChoice}>
+                            {data.screen_right.content_type === "video" ?
+                                <input id="videoRight" value="video" type="radio" name="screenRight" onChange={(e) => setRightField("video")} className={styles.inputRadioMini} defaultChecked />
+                                : <input id="videoRight" value="video" type="radio" name="screenRight" onChange={(e) => setRightField("video")} className={styles.inputRadioMini} />
+                            }
+                            <label className={styles.labelRadioMini} htmlFor="videoRight">
+                                <p className={styles.p}>Video</p>
                             </label>
-                            <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setLeftVideo(e.target.files[0])}></input>
-                        </>
 
-                    }
+                            {data.screen_right.content_type === "info" ?
+                                <input id="infoRight" value="info" type="radio" name="screenRight" onChange={(e) => setRightField("info")} className={styles.inputRadioMini} defaultChecked />
+                                : <input id="infoRight" value="info" type="radio" name="screenRight" onChange={(e) => setRightField("info")} className={styles.inputRadioMini} />
+                            }
+                            <label className={styles.labelRadioMini} htmlFor="infoRight">
+                                <p className={styles.p}>Info</p>
+                            </label>
+                        </div>
 
-                    {leftField === "info" &&
-                        <label className={styles.labelText}>
-                            <p className={styles.p}> Tell a fact about the song</p>
-                            <input type="text" name="screenLeftInfo" className={styles.inputText} defaultValue={data.screen_left.info} />
-                        </label>
+                        {rightField === "video" &&
+                            <>
+                                <label htmlFor="file-upload" className={styles.submitButton}>
+                                    <p className={styles.p}>Upload right video</p>
+                                </label>
+                                <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setRightVideo(e.target.files[0])}></input>
+                            </>
 
-                    }
-                </div>
-
-                <div>
-                    <h3 className={styles.h3}>Screen Right</h3>
-                    <div className={styles.flexChoice}>
-                        {data.screen_right.content_type === "video" ?
-                            <input id="videoRight" value="video" type="radio" name="screenRight" onChange={(e) => setRightField("video")} className={styles.inputRadioMini} defaultChecked />
-                            : <input id="videoRight" value="video" type="radio" name="screenRight" onChange={(e) => setRightField("video")} className={styles.inputRadioMini} />
                         }
-                        <label className={styles.labelRadioMini} htmlFor="videoRight">
-                            <p className={styles.p}>Video</p>
-                        </label>
 
-                        {data.screen_right.content_type === "info" ?
-                            <input id="infoRight" value="info" type="radio" name="screenRight" onChange={(e) => setRightField("info")} className={styles.inputRadioMini} defaultChecked />
-                            : <input id="infoRight" value="info" type="radio" name="screenRight" onChange={(e) => setRightField("info")} className={styles.inputRadioMini} />
+                        {rightField === "info" &&
+
+                            <label className={styles.labelText}>
+                                <p>Tell a fact about the song</p>
+                                <input type="text" name="screenRightInfo" className={styles.inputText} defaultValue={data.screen_right.info} />
+                            </label>
+
                         }
-                        <label className={styles.labelRadioMini} htmlFor="infoRight">
-                            <p className={styles.p}>Info</p>
-                        </label>
                     </div>
 
-                    {rightField === "video" &&
-                        <>
-                            <label htmlFor="file-upload" className={styles.submitButton}>
-                                <p className={styles.p}>Upload right video</p>
-                            </label>
-                            <input className={styles.labelFile} id="file-upload" type="file" onChange={(e) => setRightVideo(e.target.files[0])}></input>
-                        </>
+                    <input type="submit" value="Change experience" className={styles.submitButton} />
+                </form>
+            </>
 
-                    }
-
-                    {rightField === "info" &&
-
-                        <label className={styles.labelText}>
-                            <p>Tell a fact about the song</p>
-                            <input type="text" name="screenRightInfo" className={styles.inputText} defaultValue={data.screen_right.info} />
-                        </label>
-
-                    }
-                </div>
-
-                <input type="submit" value="Change experience" className={styles.submitButton} />
-            </form>
-        </>
-
-    )
+        )
+    }
+    if (!data) {
+        return (<p>lost data</p>)
+    }
 
 }
 
