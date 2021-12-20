@@ -124,20 +124,20 @@ const Add = () => {
                 <div className={styles.flexChoice}>
                     <input id="stage" value="stage" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="stage">
-                        <Image src={stage} width={1271} height={793} />
+                        <Image src={stage} width={1271} height={793} alt="prop for model" />
                         <p className={styles.p}>Stage</p>
                     </label>
 
                     <input id="organic" value="organic" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="organic">
-                        <Image src={organic} width={1271} height={793} />
+                        <Image src={organic} width={1271} height={793} alt="prop for model" />
                         <p className={styles.p}>Organic</p>
                     </label>
 
                     <input id="vibes" value="vibes" type="radio" name="model" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="vibes">
                         <div>
-                            <Image src={vibes} width={1271} height={793} />
+                            <Image src={vibes} width={1271} height={793} alt="prop for model" />
                             <p className={styles.p}>Vibes</p>
                         </div>
 
@@ -150,19 +150,19 @@ const Add = () => {
                 <div className={styles.flexChoice}>
                     <input id="hardwood" value="hardwood" type="radio" name="floor" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="hardwood">
-                        <Image src={hardwood} width={900} height={900} />
+                        <Image src={hardwood} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Hardwood</p>
                     </label>
 
                     <input id="spaced" value="spaced" type="radio" name="floor" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="spaced">
-                        <Image src={spaced} width={900} height={900} />
+                        <Image src={spaced} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Rough</p>
                     </label>
 
                     <input id="muddy" value="muddy" type="radio" name="floor" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="muddy">
-                        <Image src={muddy} width={900} height={900} />
+                        <Image src={muddy} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Muddy</p>
                     </label>
                 </div>
@@ -172,19 +172,19 @@ const Add = () => {
                 <div className={styles.flexChoice}>
                     <input id="paper" value="paper" type="radio" name="element" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="paper">
-                        <Image src={paper} width={900} height={900} />
+                        <Image src={paper} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Paper</p>
                     </label>
 
                     <input id="metal" value="metal" type="radio" name="element" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="metal">
-                        <Image src={metal} width={900} height={900} />
+                        <Image src={metal} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Metal</p>
                     </label>
 
                     <input id="space" value="space" type="radio" name="element" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="space">
-                        <Image src={space} width={900} height={900} />
+                        <Image src={space} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Space</p>
                     </label>
                 </div>
@@ -194,19 +194,19 @@ const Add = () => {
                 <div className={styles.flexChoice}>
                     <input id="glossy" value="glossy" type="radio" name="special" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="glossy">
-                        <Image src={glossy} width={900} height={900} />
+                        <Image src={glossy} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Glossy</p>
                     </label>
 
                     <input id="lava" value="lava" type="radio" name="special" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="lava">
-                        <Image src={lava} width={900} height={900} />
+                        <Image src={lava} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Lava</p>
                     </label>
 
                     <input id="slime" value="slime" type="radio" name="special" className={styles.inputRadio} />
                     <label className={styles.labelRadio} htmlFor="slime">
-                        <Image src={slime} width={900} height={900} />
+                        <Image src={slime} width={900} height={900} alt="prop for model" />
                         <p className={styles.p}>Slime</p>
                     </label>
                 </div>

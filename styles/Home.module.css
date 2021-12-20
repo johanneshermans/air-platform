@@ -3,10 +3,18 @@
   height: 100vh;
   background-position: center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .none {
   display: none;
+}
+.logo {
+  margin: 0 auto;
+  width: 30%;
+  display: block;
 }
 
 .nav {
@@ -29,6 +37,26 @@
   color: white;
 }
 
+.blackBox {
+  background-color: black;
+  background-image: url(../public/stars.jpeg);
+  background-attachment: fixed;
+}
+
+.quote, .blackBoxQuote {
+  display: block;
+  font-size: 6em;
+  margin-bottom: .3em;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 100%;
+}
+
+.intro, .magicBox  {
+  width: 50em;
+  margin: 0 auto;
+}
+
 .content {
   width: 52rem;
   margin: 4em auto;
@@ -36,19 +64,48 @@
   display: flex;
   justify-content: center;
   border-radius: 2em;
+  align-items: flex-end;
 }
 
 .container {
-  padding: 5% 0 0 5%;
+  padding: 5%;
+  width: 55%;
 }
 
-.button {
+.container_img {
+  width: 40%;
+  padding: 20%;
+}
+
+.blackBoxQuote {
+  color: white;
+  font-size: 6em;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: .5em;
+  line-height: 100%;
+}
+
+.magicBox {
+    padding: 20% 0;
+}
+.buttonBlack {
   background-color: black;
   color: white;
   margin-top: 2em;
   display: block;
-  padding: 3%;
+  padding: 5%;
   width: 10em;
   text-align: center;
   border-radius: 2em;
 }
+
+.buttonWhite {
+  background-color: white;
+  color: black;
+  margin-top: 2em;
+  padding: 3%;
+  text-align: center;
+  border-radius: 2em;
+}
+
