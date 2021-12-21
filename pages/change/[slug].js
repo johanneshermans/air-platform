@@ -254,8 +254,8 @@ export default function Change({ data, notFound }) {
                             </label>
 
                             {data.screen_left.content_type === "info" ?
-                                <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} defaultChecked />
-                                : <input id="infoLeft" value="info" type="radio" name="screenLeft" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} />
+                                <input id="infoLeft" value="info" type="radio" name="screenLeftInfo" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} defaultChecked />
+                                : <input id="infoLeft" value="info" type="radio" name="screenLeftInfo" onChange={(e) => setLeftField("info")} className={styles.inputRadioMini} />
                             }
                             <label className={styles.labelRadioMini} htmlFor="infoLeft">
                                 <p className={styles.p}>Info</p>
