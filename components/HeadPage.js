@@ -9,11 +9,11 @@ import Link from 'next/link';
 const HeadPage = () => {
     return (
         <>
-            <section className={styles.header}>
+            <div className={styles.header}>
                 <div className={styles.logo} >
                     <Image alt='header logo' src={logo} width={1000} height={1000} />
                 </div>
-            </section>
+            </div>
             <NavBar />
 
             <div className={styles.intro}>

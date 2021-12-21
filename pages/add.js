@@ -213,23 +213,6 @@ const Add = () => {
                     </label>
                 </div>
 
-
-                {/*                 <h4>Colors</h4>
-                <label>
-                    Color 1
-                    <input type="color" id="baba" name="color1" value="" />
-                </label>
-                <br />
-                <label>
-                    Color 2
-                    <input type="color" id="color2" name="color2" value="#e66465" />
-                </label>
-                <br />
-                <label>
-                    Color 3
-                    <input type="color" id="color3" name="color3" value="#e66465" />
-                </label> */}
-
                 <div>
                     <h3 className={styles.h3}>Screen Left</h3>
                     <div className={styles.flexChoice}>
