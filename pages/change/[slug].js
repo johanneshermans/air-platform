@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid'
 import uploadVideo from '../api/uploadVideo';
 import React, { useState } from 'react';
 import styles from '../../styles/Add.module.css';
@@ -16,6 +15,7 @@ import spaced from '../../public/spaced.jpg';
 import paper from '../../public/paper.jpg';
 import Image from 'next/image';
 import NavBar from '../../components/NavBar';
+import Router from 'next/router';
 
 export default function Change({ data, notFound }) {
     console.log(data);
@@ -42,6 +42,7 @@ export default function Change({ data, notFound }) {
         if (response.ok) {
             console.log(response);
             console.log("happy");
+            Router.push(`/detail/${data.target}`)
         }
         if (!response.ok) {
             console.log("mistakes");
@@ -50,7 +51,6 @@ export default function Change({ data, notFound }) {
 
     const handleExp = async (e) => {
         e.preventDefault();
-        const generateTargetCode = nanoid();
         const getHeadVideoLink = await uploadVideo(headVideo, oldVideoclip)
         const getLeftVideoLink = await uploadVideo(leftVideo, oldLeftVideo)
         const getRightVideoLink = await uploadVideo(rightVideo, oldRightVideo)
@@ -60,7 +60,7 @@ export default function Change({ data, notFound }) {
             artist: e.target.artist.value,
             videoclip_link: getHeadVideoLink,
             bpm: e.target.bpm.value,
-            target: generateTargetCode,
+            target: e.target.value,
             model: {
                 sort: e.target.model.value,
                 tex1: e.target.floor.value,
@@ -337,7 +337,7 @@ export default function Change({ data, notFound }) {
 
                         }
                     </div>
-
+                    <input type="text" name="target" className={styles.hidden} defaultValue={data.target} required />
                     <input type="submit" value="Change experience" className={styles.submitButton} />
                 </form>
             </>

@@ -16,6 +16,7 @@ import spaced from '../public/spaced.jpg';
 import paper from '../public/paper.jpg';
 import Image from 'next/image';
 import NavBar from '../components/NavBar';
+import Router from 'next/router';
 
 
 const Add = () => {
@@ -38,6 +39,7 @@ const Add = () => {
         if (response.ok) {
             console.log(response);
             console.log("happy");
+            Router.push(`/detail/${message.target}`)
         }
         if (!response.ok) {
             console.log("mistakes");

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
+import Router from 'next/router';
 import miniLogo from '../public/miniLogo.png'
 
 const NavBar = () => {

@@ -25,7 +25,7 @@ const HeadPage = () => {
                 <section className={styles.content}>
                     <div className={styles.container}>
                         <h2 className={styles.title}>Remember Avicii, come together to enjoy</h2>
-                        <Link href={`/detail/h8fHSaofym-JvkxbFyYvG`}>
+                        <Link href={`/detail/N9TT`}>
                             <a className={styles.buttonBlack}>Discover</a>
                         </Link>
 

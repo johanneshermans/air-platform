@@ -65,7 +65,7 @@ export default function Detail({ data, notFound }) {
                             <Image src={GiveImage(data.model.sort)} width={1537} height={984} alt="prop for model" />
                         </div>
                         <div className={styles.box}>
-                            <h3 className={styles.h3}>Floor</h3>
+                            <h3 className={styles.h3}>Floors</h3>
                             <Image src={GiveImage(data.model.tex1)} width={900} height={900} alt="prop for model" />
                         </div>
                         <div className={styles.box}>
