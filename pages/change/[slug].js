@@ -51,10 +51,10 @@ export default function Change({ data, notFound }) {
 
     const handleExp = async (e) => {
         e.preventDefault();
+        
         const getHeadVideoLink = await uploadVideo(headVideo, oldVideoclip)
         const getLeftVideoLink = await uploadVideo(leftVideo, oldLeftVideo)
         const getRightVideoLink = await uploadVideo(rightVideo, oldRightVideo)
-        console.log(getHeadVideoLink);
         const data = {
             title: e.target.title.value,
             artist: e.target.artist.value,

@@ -1,6 +1,6 @@
 
 const uploadVideo = async (video, url) => {
-    if (video !== 0) {
+    if (video !== "") {
         const data = new FormData()
         data.append("file", video)
         data.append("upload_preset", "experience")
