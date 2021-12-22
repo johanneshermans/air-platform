@@ -23,7 +23,7 @@ const NavBar = () => {
             </Link>
 
             <Link href="/features" >
-                <a>Featues</a>
+                <a>Features</a>
             </Link>
 
         </nav>

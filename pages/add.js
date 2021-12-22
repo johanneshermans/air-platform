@@ -64,9 +64,9 @@ const Add = () => {
                 tex1: e.target.floor.value,
                 tex2: e.target.element.value,
                 tex3: e.target.special.value,
-                color1: "#e66465",
-                color2: "#e66465",
-                color3: "#e66465"
+                color1: e.target.color1.value,
+                color2: e.target.color2.value,
+                color3: e.target.color3.value
             },
             screen_left: {
                 content_type: e.target.screenLeft.value,
@@ -213,6 +213,24 @@ const Add = () => {
                     </label>
                 </div>
 
+                <div className={styles.color}>
+                    <h4 className={styles.h4}>Colors</h4>
+                    <label className={styles.labelText}>
+                        <p>Color 1 (Hex Code)</p>
+                        <input type="text" name="color1" className={styles.inputText} required />
+                    </label>
+
+                    <label className={styles.labelText}>
+                        <p>Color 2 (Hex Code)</p>
+                        <input type="text" name="color2" className={styles.inputText} required />
+                    </label>
+
+                    <label className={styles.labelText}>
+                        <p>Color 3 (Hex Code)</p>
+                        <input type="text" name="color3" className={styles.inputText} required />
+                    </label>
+                </div>
+
                 <div>
                     <h3 className={styles.h3}>Screen Left</h3>
                     <div className={styles.flexChoice}>
@@ -241,7 +259,7 @@ const Add = () => {
 
                         <label className={styles.labelText}>
                             <p className={styles.p}> Tell a fact about the song</p>
-                            <input type="text" name="screenLeftInfo" className={styles.inputText} />
+                            <input type="text" name="screenLeftInfo" className={styles.inputTextField} />
                         </label>
 
                     }
@@ -274,8 +292,8 @@ const Add = () => {
                     {rightField === "info" &&
 
                         <label className={styles.labelText}>
-                            <p>Tell a fact about the song</p>
-                            <input type="text" name="screenRightInfo" className={styles.inputText} />
+                            <p className={styles.p}>Tell a fact about the song</p>
+                            <input type="text" name="screenRightInfo" className={styles.inputTextField} />
                         </label>
 
                     }
